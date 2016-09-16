@@ -1,5 +1,9 @@
 #ShoppingCar(仿uniqlo)
 
+##construction with
+* typesetting:html table
+* MVC:servelet+jsp
+
 ##funcation
 * user registered
 * shoppingcar

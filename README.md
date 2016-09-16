@@ -2,9 +2,9 @@
 
 ##construction with
 * typesetting:
-    html table
++ html table
 * MVC:
-    servelet+jsp
++ servelet+jsp
 
 ##funcation
 * user registered

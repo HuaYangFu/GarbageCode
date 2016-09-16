@@ -1,10 +1,10 @@
 #ShoppingCar(仿uniqlo)
 
 ##construction with
-> typesetting:
+> *typesetting:*
 >> html table
 
-> MVC:
+> *MVC:*
 >> servelet+jsp
 
 ##funcation

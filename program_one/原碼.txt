@@ -1,0 +1,65 @@
+//圖片路徑 C:/java/ston/bin/"+apple[i]+".jpg
+
+package ston; //套件夾
+import javax.swing.*; 
+import java.awt.*;
+import java.awt.event.*;
+
+//繼承JFrame類別 實作ActionListenerru介面的actionPerformed方法來處理按鈕事件
+public class test extends JFrame implements  ActionListener{
+
+	private JPanel apple1 = new JPanel();
+	private  String []apple =new String[] {"剪刀","石頭","布"};
+	private JLabel[] lbl = new JLabel[apple.length];
+	private ImageIcon[] image = new ImageIcon[3];
+	private JButton OK;
+	
+	test(){
+		
+		OK =new JButton("開始");
+		OK.setBounds(450,270,70,30);
+		apple1.add(OK);
+		OK.addActionListener(this);
+		
+		for(int i = 0; i<apple.length; i++){
+			image[i] =new ImageIcon("C:/java/ston/bin/"+apple[i]+".jpg");
+		}
+		
+		for(int i = 0; i<apple.length;i++){
+		setContentPane(apple1);
+		lbl[i] = new JLabel();
+		lbl[i].setIcon(image[0]);
+		lbl[i].setBounds(i*500 +20, 30, 500, 300);
+		apple1.add(lbl[i]);	
+			}
+			
+		}
+
+	public void actionPerformed(ActionEvent evt){
+		
+		Thread t = new Thread (
+			new Runnable(){
+				public void run(){	
+					int [] n = new int[lbl.length];
+					for (int i = 0; i<lbl.length ; i++){
+					n[i]=(int)Math.round(Math.random()*3);
+					lbl[i].setIcon(image[n[i]]);
+						}
+					}
+				
+				});
+			t.start();
+			}
+		
+	
+	
+	public static void main(String[] args) {
+
+	test test = new test();
+	test.setSize(1000,370);
+	test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	test.setLayout(null);
+	test.setResizable(false);
+	test.setVisible(true);
+	}
+}

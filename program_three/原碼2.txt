@@ -1,0 +1,772 @@
+package ston;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Scanner;
+
+import javax.swing.SwingConstants;
+
+public class wowo extends JDialog{
+	
+	private final JPanel contentPanel = new JPanel();
+	private JTextField textField;
+	private JTextField textField_2;
+	private JButton btnNewButton_1;
+	private JButton button_1;
+	private JButton button_2;
+	private JTextField textField_1;
+	private JTextField textField_9;
+	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_13;
+	private JButton button_8;
+	
+	int x = 0;
+	int x_1 = 0;
+	int x_2 = 0;
+	int x_3 = 0;
+	
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
+	private JTextField textField_12;
+	private JTextField textField_14;
+	private JTextField textField_15;
+	private JTextField textField_16;
+	private JTextField textField_17;
+	private JTextField textField_18;
+	private JTextField textField_19;
+	private JTextField textField_20;
+	private JTextField textField_21;
+	private JTextField textField_22;
+	private JTextField textField_23;
+	private JTextField textField_24;
+	private JTextField textField_25;
+	private JTextField textField_26;
+	private JTextField textField_27;
+	private JTextField textField_34;
+	private JButton btnNewButton_2;
+	/**
+	 * Create the dialog.
+	 */
+	public wowo() {
+		setBackground(new Color(255, 255, 255));
+		try {
+			setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			setVisible(true);
+			getContentPane().setLayout(null);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		
+		setBounds(100, 100, 327, 349);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(230, 230, 250));
+		
+		contentPanel.setLayout(null);
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		{
+			JButton btnNewButton = new JButton("New button");
+			btnNewButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
+			contentPanel.add(btnNewButton);
+		}
+		
+		textField = new JTextField();
+		textField.setText("\u62DB\u724C\u6F22\u5821");
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setFont(new Font("標楷體", Font.PLAIN, 14));
+		textField.setBackground(Color.WHITE);
+		textField.setBounds(14, 8, 100, 21);
+		textField.setEditable(true);
+		contentPanel.add(textField);
+		textField.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setBackground(new Color(255, 255, 224));
+		textField_2.setEditable(false);
+		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_2.setText(""+x);
+		textField_2.setFont(new Font("標楷體", Font.PLAIN, 14));
+		textField_2.setColumns(10);
+		textField_2.setBounds(113, 8, 50, 21);
+		contentPanel.add(textField_2);
+		
+		button_1 = new JButton("\uFF0B");
+		button_1.setBackground(new Color(175, 238, 238));
+		button_1.setForeground(new Color(0, 0, 0));
+		button_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		button_1.setFont(new Font("標楷體", Font.PLAIN, 12));
+		
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x_2 = 30;
+				x++;
+				textField_11.setText(""+x*x_2);
+				textField_2.setText(""+x);
+				int y = Integer.parseInt(textField_11.getText());
+				int z = Integer.parseInt(textField_13.getText());
+				textField_10.setText(""+(y+z));
+			}
+		});
+		button_1.setToolTipText("");
+		button_1.setBounds(14, 29, 50, 21);
+		contentPanel.add(button_1);
+		
+		button_2 = new JButton("\uFF0B");
+		button_2.setBackground(new Color(175, 238, 238));
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			x_1 ++;
+			x_3 =5;
+			textField_9.setText(""+x_1);
+			textField_13.setText(""+x_1*x_3);
+			int y = Integer.parseInt(textField_11.getText());
+			int z = Integer.parseInt(textField_13.getText());
+			textField_10.setText(""+(y+z));
+			}
+		});
+		button_2.setBounds(160, 29, 25, 21);
+		contentPanel.add(button_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_1.setText("蛋");
+		textField_1.setColumns(10);
+		textField_1.setBounds(160, 8, 50, 21);
+		contentPanel.add(textField_1);
+		
+		textField_9 = new JTextField();
+		textField_9.setBackground(new Color(255, 255, 224));
+		textField_9.setEditable(false);
+		textField_9.setText(""+x_1);
+		textField_9.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_9.setColumns(10);
+		textField_9.setBounds(210, 8, 50, 21);
+		contentPanel.add(textField_9);
+		
+		textField_10 = new JTextField();
+		textField_10.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_10.setColumns(10);
+		textField_10.setBounds(259, 8, 50, 42);
+		contentPanel.add(textField_10);
+		
+		JButton button = new JButton("\uFF0D");
+		button.setBackground(new Color(173, 255, 47));
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_1 --;
+				x_3 = 5;
+				textField_9.setText(""+x_1);
+				textField_13.setText(""+x_3*x_1);
+				int y = Integer.parseInt(textField_11.getText());
+				int z = Integer.parseInt(textField_13.getText());
+				textField_10.setText(""+(y+z));
+			}
+		});
+		button.setBounds(185, 29, 25, 21);
+		contentPanel.add(button);
+		
+		textField_11 = new JTextField();
+		textField_11.setBackground(new Color(255, 255, 224));
+		textField_11.setEditable(false);
+		textField_11.setText(""+x_2);
+		textField_11.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_11.setColumns(10);
+		textField_11.setBounds(113, 29, 50, 21);
+		contentPanel.add(textField_11);
+		
+		textField_13 = new JTextField();
+		textField_13.setBackground(new Color(255, 255, 224));
+		textField_13.setEditable(false);
+		textField_13.setText(""+x_3);
+		textField_13.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_13.setColumns(10);
+		textField_13.setBounds(210, 29, 50, 21);
+		contentPanel.add(textField_13);
+		
+		button_8 = new JButton("\uFF0D");
+		button_8.setBackground(new Color(173, 255, 47));
+		button_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_8.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x--;
+				x_2 = 30;
+				textField_2.setText(""+x);
+				textField_11.setText(""+x*x_2);
+				int y = Integer.parseInt(textField_11.getText());
+				int z = Integer.parseInt(textField_13.getText());
+				textField_10.setText(""+(y+z));
+			}
+		});
+		button_8.setToolTipText("");
+		button_8.setFont(new Font("標楷體", Font.PLAIN, 12));
+		button_8.setBounds(64, 29, 50, 21);
+		contentPanel.add(button_8);
+		
+		textField_3 = new JTextField();
+		textField_3.setText("\u57F9\u6839\u6F22\u5821");
+		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_3.setFont(new Font("標楷體", Font.PLAIN, 14));
+		textField_3.setEditable(true);
+		textField_3.setColumns(10);
+		textField_3.setBackground(Color.WHITE);
+		textField_3.setBounds(14, 62, 100, 21);
+		contentPanel.add(textField_3);
+		
+		JButton button_3 = new JButton("\uFF0B");
+		button_3.setBackground(new Color(175, 238, 238));
+		button_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x_2 = 40;
+				x++;
+				textField_4.setText(""+x*x_2);
+				textField_5.setText(""+x);
+				int y = Integer.parseInt(textField_4.getText());
+				int z = Integer.parseInt(textField_8.getText());
+				textField_12.setText(""+(y+z));
+			}
+		});
+		button_3.setToolTipText("");
+		button_3.setFont(new Font("標楷體", Font.PLAIN, 12));
+		button_3.setBounds(14, 83, 50, 21);
+		contentPanel.add(button_3);
+		
+		JButton button_4 = new JButton("\uFF0D");
+		button_4.setBackground(new Color(173, 255, 47));
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_2 = 40;
+				x--;
+				textField_4.setText(""+x*x_2);
+				textField_5.setText(""+x);
+				int y = Integer.parseInt(textField_4.getText());
+				int z = Integer.parseInt(textField_8.getText());
+				textField_12.setText(""+(y+z));
+			}
+		});
+		button_4.setToolTipText("");
+		button_4.setFont(new Font("標楷體", Font.PLAIN, 12));
+		button_4.setBounds(64, 83, 50, 21);
+		contentPanel.add(button_4);
+		
+		textField_4 = new JTextField();
+		textField_4.setBackground(new Color(255, 255, 224));
+		textField_4.setText("0");
+		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_4.setEditable(false);
+		textField_4.setColumns(10);
+		textField_4.setBounds(113, 83, 50, 21);
+		contentPanel.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setBackground(new Color(255, 255, 224));
+		textField_5.setText("0");
+		textField_5.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_5.setFont(new Font("標楷體", Font.PLAIN, 14));
+		textField_5.setEditable(false);
+		textField_5.setColumns(10);
+		textField_5.setBounds(113, 62, 50, 21);
+		contentPanel.add(textField_5);
+		
+		textField_6 = new JTextField();
+		textField_6.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_6.setText("蛋");
+		textField_6.setColumns(10);
+		textField_6.setBounds(160, 62, 50, 21);
+		contentPanel.add(textField_6);
+		
+		JButton button_5 = new JButton("New button");
+		button_5.setBackground(new Color(175, 238, 238));
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_1 ++;
+				x_3 =5;
+				textField_7.setText(""+x_1);
+				textField_8.setText(""+x_1*x_3);
+				int y = Integer.parseInt(textField_4.getText());
+				int z = Integer.parseInt(textField_8.getText());
+				textField_12.setText(""+(y+z));
+			}
+		});
+		button_5.setBounds(160, 83, 25, 21);
+		contentPanel.add(button_5);
+		
+		JButton button_6 = new JButton("New button");
+		button_6.setBackground(new Color(173, 255, 47));
+		button_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_6.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_1 --;
+				x_3 =5;
+				textField_7.setText(""+x_1);
+				textField_8.setText(""+x_1*x_3);
+				int y = Integer.parseInt(textField_4.getText());
+				int z = Integer.parseInt(textField_8.getText());
+				textField_12.setText(""+(y+z));
+			}
+		});
+		button_6.setBounds(185, 83, 25, 21);
+		contentPanel.add(button_6);
+		
+		textField_7 = new JTextField();
+		textField_7.setBackground(new Color(255, 255, 224));
+		textField_7.setText("0");
+		textField_7.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_7.setEditable(false);
+		textField_7.setColumns(10);
+		textField_7.setBounds(210, 62, 50, 21);
+		contentPanel.add(textField_7);
+		
+		textField_8 = new JTextField();
+		textField_8.setBackground(new Color(255, 255, 224));
+		textField_8.setText("0");
+		textField_8.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_8.setEditable(false);
+		textField_8.setColumns(10);
+		textField_8.setBounds(210, 83, 50, 21);
+		contentPanel.add(textField_8);
+		
+		textField_12 = new JTextField();
+		textField_12.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_12.setColumns(10);
+		textField_12.setBounds(259, 62, 50, 42);
+		contentPanel.add(textField_12);
+		
+		textField_14 = new JTextField();
+		textField_14.setText("\u9EA5\u9999\u96DE\u5821");
+		textField_14.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_14.setFont(new Font("標楷體", Font.PLAIN, 14));
+		textField_14.setEditable(true);
+		textField_14.setColumns(10);
+		textField_14.setBackground(Color.WHITE);
+		textField_14.setBounds(14, 119, 100, 21);
+		contentPanel.add(textField_14);
+		
+		JButton button_7 = new JButton("\uFF0B");
+		button_7.setBackground(new Color(175, 238, 238));
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_7.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_2 = 50;
+				x++;
+				textField_15.setText(""+x*x_2);
+				textField_16.setText(""+x);
+				int y = Integer.parseInt(textField_15.getText());
+				int z = Integer.parseInt(textField_19.getText());
+				textField_20.setText(""+(y+z));
+			}
+		});
+		button_7.setToolTipText("");
+		button_7.setFont(new Font("標楷體", Font.PLAIN, 12));
+		button_7.setBounds(14, 140, 50, 21);
+		contentPanel.add(button_7);
+		
+		JButton button_9 = new JButton("\uFF0D");
+		button_9.setBackground(new Color(173, 255, 47));
+		button_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_9.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_2 = 50;
+				x--;
+				textField_15.setText(""+x*x_2);
+				textField_16.setText(""+x);
+				int y = Integer.parseInt(textField_15.getText());
+				int z = Integer.parseInt(textField_19.getText());
+				textField_20.setText(""+(y+z));
+			}
+		});
+		button_9.setToolTipText("");
+		button_9.setFont(new Font("標楷體", Font.PLAIN, 12));
+		button_9.setBounds(64, 140, 50, 21);
+		contentPanel.add(button_9);
+		
+		textField_15 = new JTextField();
+		textField_15.setBackground(new Color(255, 255, 224));
+		textField_15.setText("0");
+		textField_15.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_15.setEditable(false);
+		textField_15.setColumns(10);
+		textField_15.setBounds(113, 140, 50, 21);
+		contentPanel.add(textField_15);
+		
+		textField_16 = new JTextField();
+		textField_16.setBackground(new Color(255, 255, 224));
+		textField_16.setText("0");
+		textField_16.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_16.setFont(new Font("標楷體", Font.PLAIN, 14));
+		textField_16.setEditable(false);
+		textField_16.setColumns(10);
+		textField_16.setBounds(113, 119, 50, 21);
+		contentPanel.add(textField_16);
+		
+		textField_17 = new JTextField();
+		textField_17.setText("\u86CB");
+		textField_17.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_17.setColumns(10);
+		textField_17.setBounds(160, 119, 50, 21);
+		contentPanel.add(textField_17);
+		
+		JButton button_10 = new JButton("New button");
+		button_10.setBackground(new Color(175, 238, 238));
+		button_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_10.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_1 ++;
+				x_3 =5;
+				textField_18.setText(""+x_1);
+				textField_19.setText(""+x_1*x_3);
+				int y = Integer.parseInt(textField_15.getText());
+				int z = Integer.parseInt(textField_19.getText());
+				textField_20.setText(""+(y+z));
+			}
+		});
+		button_10.setBounds(160, 140, 25, 21);
+		contentPanel.add(button_10);
+		
+		JButton button_11 = new JButton("New button");
+		button_11.setBackground(new Color(173, 255, 47));
+		button_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_11.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_1 --;
+				x_3 =5;
+				textField_18.setText(""+x_1);
+				textField_19.setText(""+x_1*x_3);
+				int y = Integer.parseInt(textField_15.getText());
+				int z = Integer.parseInt(textField_19.getText());
+				textField_20.setText(""+(y+z));
+			}
+		});
+		button_11.setBounds(185, 140, 25, 21);
+		contentPanel.add(button_11);
+		
+		textField_18 = new JTextField();
+		textField_18.setBackground(new Color(255, 255, 224));
+		textField_18.setText("0");
+		textField_18.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_18.setEditable(false);
+		textField_18.setColumns(10);
+		textField_18.setBounds(210, 119, 50, 21);
+		contentPanel.add(textField_18);
+		
+		textField_19 = new JTextField();
+		textField_19.setBackground(new Color(255, 255, 224));
+		textField_19.setText("0");
+		textField_19.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_19.setEditable(false);
+		textField_19.setColumns(10);
+		textField_19.setBounds(210, 140, 50, 21);
+		contentPanel.add(textField_19);
+		
+		textField_20 = new JTextField();
+		textField_20.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_20.setColumns(10);
+		textField_20.setBounds(259, 119, 50, 42);
+		contentPanel.add(textField_20);
+		
+		textField_21 = new JTextField();
+		textField_21.setText("\u5361\u5566\u96DE\u817F\u5821");
+		textField_21.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_21.setFont(new Font("標楷體", Font.PLAIN, 14));
+		textField_21.setEditable(true);
+		textField_21.setColumns(10);
+		textField_21.setBackground(Color.WHITE);
+		textField_21.setBounds(14, 179, 100, 21);
+		contentPanel.add(textField_21);
+		
+		JButton button_12 = new JButton("\uFF0B");
+		button_12.setBackground(new Color(175, 238, 238));
+		button_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_12.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_2 = 55;
+				x++;
+				textField_22.setText(""+x*x_2);
+				textField_23.setText(""+x);
+				int y = Integer.parseInt(textField_22.getText());
+				int z = Integer.parseInt(textField_26.getText());
+				textField_27.setText(""+(y+z));
+			}
+		});
+		button_12.setToolTipText("");
+		button_12.setFont(new Font("標楷體", Font.PLAIN, 12));
+		button_12.setBounds(14, 200, 50, 21);
+		contentPanel.add(button_12);
+		
+		JButton button_13 = new JButton("\uFF0D");
+		button_13.setBackground(new Color(173, 255, 47));
+		button_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_13.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_2 = 55;
+				x--;
+				textField_22.setText(""+x*x_2);
+				textField_23.setText(""+x);
+				int y = Integer.parseInt(textField_22.getText());
+				int z = Integer.parseInt(textField_26.getText());
+				textField_27.setText(""+(y+z));
+			}
+		});
+		button_13.setToolTipText("");
+		button_13.setFont(new Font("標楷體", Font.PLAIN, 12));
+		button_13.setBounds(64, 200, 50, 21);
+		contentPanel.add(button_13);
+		
+		textField_22 = new JTextField();
+		textField_22.setBackground(new Color(255, 255, 224));
+		textField_22.setText("0");
+		textField_22.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_22.setEditable(false);
+		textField_22.setColumns(10);
+		textField_22.setBounds(113, 200, 50, 21);
+		contentPanel.add(textField_22);
+		
+		textField_23 = new JTextField();
+		textField_23.setBackground(new Color(255, 255, 224));
+		textField_23.setText("0");
+		textField_23.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_23.setFont(new Font("標楷體", Font.PLAIN, 14));
+		textField_23.setEditable(false);
+		textField_23.setColumns(10);
+		textField_23.setBounds(113, 179, 50, 21);
+		contentPanel.add(textField_23);
+		
+		textField_24 = new JTextField();
+		textField_24.setText("\u86CB");
+		textField_24.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_24.setColumns(10);
+		textField_24.setBounds(160, 179, 50, 21);
+		contentPanel.add(textField_24);
+		
+		JButton button_14 = new JButton("New button");
+		button_14.setBackground(new Color(175, 238, 238));
+		button_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_14.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_1 ++;
+				x_3 =5;
+				textField_25.setText(""+x_1);
+				textField_26.setText(""+x_1*x_3);
+				int y = Integer.parseInt(textField_22.getText());
+				int z = Integer.parseInt(textField_26.getText());
+				textField_27.setText(""+(y+z));
+			}
+		});
+		button_14.setBounds(160, 200, 25, 21);
+		contentPanel.add(button_14);
+		
+		JButton button_15 = new JButton("New button");
+		button_15.setBackground(new Color(173, 255, 47));
+		button_15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_15.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				x_1 --;
+				x_3 =5;
+				textField_25.setText(""+x_1);
+				textField_26.setText(""+x_1*x_3);
+				int y = Integer.parseInt(textField_22.getText());
+				int z = Integer.parseInt(textField_26.getText());
+				textField_27.setText(""+(y+z));
+			}
+		});
+		button_15.setBounds(185, 200, 25, 21);
+		contentPanel.add(button_15);
+		
+		textField_25 = new JTextField();
+		textField_25.setBackground(new Color(255, 255, 224));
+		textField_25.setText("0");
+		textField_25.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_25.setEditable(false);
+		textField_25.setColumns(10);
+		textField_25.setBounds(210, 179, 50, 21);
+		contentPanel.add(textField_25);
+		
+		textField_26 = new JTextField();
+		textField_26.setBackground(new Color(255, 255, 224));
+		textField_26.setText("0");
+		textField_26.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_26.setEditable(false);
+		textField_26.setColumns(10);
+		textField_26.setBounds(210, 200, 50, 21);
+		contentPanel.add(textField_26);
+		
+		textField_27 = new JTextField();
+		textField_27.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_27.setColumns(10);
+		textField_27.setBounds(259, 179, 50, 42);
+		contentPanel.add(textField_27);
+		
+		textField_34 = new JTextField();
+		textField_34.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_34.setColumns(10);
+		textField_34.setBounds(259, 231, 50, 42);
+		contentPanel.add(textField_34);
+		
+		btnNewButton_2 = new JButton("\u5408\u8A08");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int y = Integer.parseInt(textField_10.getText());
+				int z = Integer.parseInt(textField_12.getText());
+				int c = Integer.parseInt(textField_20.getText());
+				int d = Integer.parseInt(textField_27.getText());
+				
+				textField_34.setText(""+(y+z+c+d));
+			}
+		});
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnNewButton_2.setFont(new Font("標楷體", Font.BOLD, 20));
+		btnNewButton_2.setBounds(14, 231, 233, 42);
+		contentPanel.add(btnNewButton_2);
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(new Color(230, 230, 250));
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("\u7DE8\u8F2F");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+					}
+				});
+				okButton.addMouseListener(new MouseAdapter() {
+					
+					public void mouseClicked(MouseEvent e) {
+					}
+				});
+				
+				btnNewButton_1 = new JButton("\u4E0A\u4E00\u9801");
+				buttonPane.add(btnNewButton_1);
+				btnNewButton_1.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+					}
+				});
+				btnNewButton_1.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						dispose();
+						foodproject food = new foodproject();
+					}
+				});
+				
+				JButton btnNewButton_3 = new JButton("\u6B78\u96F6");
+				buttonPane.add(btnNewButton_3);
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("\u4FDD\u7559");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+					}
+				});
+				cancelButton.addMouseListener(new MouseAdapter() {
+					
+					public void mouseClicked(MouseEvent e) {
+					}
+				});
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+				
+				
+				
+			}
+			
+		
+		}
+	}	
+}

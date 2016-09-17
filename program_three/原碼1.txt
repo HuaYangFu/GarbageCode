@@ -1,0 +1,69 @@
+package ston;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class foodproject extends JFrame implements  ActionListener{
+	
+	Thread t;
+	//秙
+	private int butx = 220;
+	//秙糴
+	private int buty = 75;
+	//秙计秖
+	private int buttonnum1 = 4;
+	private int buttonnum2 = 40;
+	
+	
+	private JButton button1 [] = new JButton[buttonnum1];
+	private JButton button2 [] = new JButton[buttonnum2];
+	private JPanel panel = new JPanel(); 
+	private JPanel pane2 = new JPanel(); 
+	JFrame frame = new JFrame();
+	String [] name = {"簙躇","都","并翴","璸"};
+	
+	foodproject(){
+	
+		setBounds(200,200,300,380);
+		setResizable(false);
+		setVisible(true);
+		setContentPane(panel);
+		setLayout(null);
+		
+		for(int i = 0 ; i<buttonnum1 ; i++){
+			button1[i] = new JButton(name[i]);
+			button1[i].setFont(new Font("发砰",Font.BOLD,24) ) ; 
+			button1[i].setBounds(40,i*(buty+10)+10,butx,buty);
+			button1[i].setLayout(null);
+			panel.add(button1[i]);
+		}
+			button1[0].setBackground(Color.green);
+			button1[1].setBackground(Color.blue);
+			button1[2].setBackground(Color.YELLOW);
+			
+			button1[0].addActionListener(this);
+	}
+	public void hamburger(){
+		for(int i = 0 ; i<buttonnum2 ; i++){
+			button2[i] = new JButton();
+			button2[i].setBounds(40,i*(buty+10)+10,butx,buty);
+			button2[i].setLayout(null);
+			pane2.add(button2[i]);
+		}
+	}
+	
+	public void actionPerformed(ActionEvent e){
+		dispose();
+		wowo wo = new wowo();
+	}
+	
+	public static void main(String[] args) {
+		foodproject foodproject = new foodproject();
+	}
+
+}

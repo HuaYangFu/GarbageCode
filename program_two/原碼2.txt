@@ -1,0 +1,59 @@
+package ston;
+
+import java.awt.Container;
+import java.awt.Graphics;
+import java.util.ArrayList;
+
+import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import java.awt.*;
+
+public class newframe extends JComponent implements Runnable{
+	
+	Thread t;
+	JFrame frame;
+	ArrayList list = new ArrayList();
+	
+public static void main(String[] args) {
+	
+	newframe f = new newframe();
+	JFrame frame = new JFrame();
+	Container cp = frame.getContentPane(); 	
+	cp.add(f);
+	frame.setBounds(100,100,500,500);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setTitle("¼u¸õ²y"); 
+	frame.setResizable(false);
+	frame.setVisible(true);
+	}
+	
+newframe(){
+	t = new Thread(this);
+	t.start();
+	for(int i = 0; i<30 ; i++){
+	                  bullet b = new bullet();
+		list.add(b);
+	}
+	}
+	
+public void paint(Graphics g){
+	for(int i = 0; i<30 ; i++){
+		bullet b = (bullet) list.get(i);
+		b.paint(g);
+	}
+	}
+	               	
+public void run(){
+                 while(true){
+		repaint();
+		try {
+		t.sleep(100);
+		} catch (InterruptedException e) {
+		e.printStackTrace();
+		}
+		}
+		
+	}
+	
+}

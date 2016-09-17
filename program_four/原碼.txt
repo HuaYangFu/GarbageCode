@@ -1,0 +1,280 @@
+package calculate;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Window.Type;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.UIManager;
+import java.awt.SystemColor;
+
+public class computer extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	double first ;
+	double second ;
+	double result;
+	String opration;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					computer frame = new computer();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public computer() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 221, 257);
+		setResizable(false);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(null);
+		setContentPane(contentPane);
+		
+		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField.setBounds(10, 10, 194, 21);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JButton btnNewButton = new JButton("1");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String take ;
+				take = textField.getText()+btnNewButton.getText();
+				textField.setText(take);
+			}
+		});
+		btnNewButton.setBounds(10, 43, 41, 36);
+		contentPane.add(btnNewButton);
+		
+		JButton button = new JButton("4");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String take ;
+				take = textField.getText()+button.getText();
+				textField.setText(take);
+			}
+		});
+		button.setBounds(10, 89, 41, 36);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("7");
+		button_1.setFont(new Font("新細明體", Font.PLAIN, 12));
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String take ;
+				take = textField.getText()+button_1.getText();
+				textField.setText(take);
+			}
+		});
+		button_1.setBounds(10, 135, 41, 36);
+		contentPane.add(button_1);
+		
+		JButton btnC_1 = new JButton("C");
+		btnC_1.setForeground(new Color(0, 0, 205));
+		btnC_1.setBackground(UIManager.getColor("PasswordField.selectionBackground"));
+		btnC_1.setFont(new Font("新細明體", Font.PLAIN, 10));
+		btnC_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first = 0;
+				second = 0;
+				textField.setText("");
+			}
+		});
+		btnC_1.setBounds(10, 181, 41, 36);
+		contentPane.add(btnC_1);
+		
+		JButton button_3 = new JButton("2");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String take ;
+				take = textField.getText()+button_3.getText();
+				textField.setText(take);
+			}
+		});
+		button_3.setBounds(61, 43, 41, 36);
+		contentPane.add(button_3);
+		
+		JButton button_4 = new JButton("5");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String take ;
+				take = textField.getText()+button_4.getText();
+				textField.setText(take);
+			}
+		});
+		button_4.setBounds(61, 89, 41, 36);
+		contentPane.add(button_4);
+		
+		JButton button_5 = new JButton("8");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String take ;
+				take = textField.getText()+button_5.getText();
+				textField.setText(take);
+			}
+		});
+		button_5.setBounds(61, 135, 41, 36);
+		contentPane.add(button_5);
+		
+		JButton button_6 = new JButton("0");
+		button_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String take ;
+				take = textField.getText()+button_6.getText();
+				textField.setText(take);
+			}
+		});
+		button_6.setBounds(61, 181, 41, 36);
+		contentPane.add(button_6);
+		
+		JButton button_7 = new JButton("3");
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String take ;
+				take = textField.getText()+button_7.getText();
+				textField.setText(take);
+			}
+		});
+		button_7.setBounds(112, 43, 41, 36);
+		contentPane.add(button_7);
+		
+		JButton button_8 = new JButton("6");
+		button_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String take ;
+				take = textField.getText()+button_8.getText();
+				textField.setText(take);
+			}
+		});
+		button_8.setBounds(112, 89, 41, 36);
+		contentPane.add(button_8);
+		
+		JButton button_9 = new JButton("9");
+		button_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String take ;
+				take = textField.getText()+button_9.getText();
+				textField.setText(take);
+			}
+		});
+		button_9.setBounds(112, 135, 41, 36);
+		contentPane.add(button_9);
+		
+		JButton btnC = new JButton("=");
+		btnC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				second = Double.parseDouble(textField.getText());
+				String answer;
+				switch(opration){
+				
+				case "+":
+					result = first + second;
+					answer = String.format("%.0f", result);
+					textField.setText(answer);
+					break;
+				
+				case "-":
+					result = first - second;
+					answer = String.format("%.0f", result);
+					textField.setText(answer);
+					break;
+				
+				case "*":
+					result = first * second;
+					answer = String.format("%.0f", result);
+					textField.setText(answer);
+					break;
+				
+				case "/":
+				result = first / second;
+				answer = String.format("%.0f", result);
+				textField.setText(answer);
+				break;
+				}
+			}});
+		btnC.setForeground(new Color(0, 0, 205));
+		btnC.setFont(new Font("新細明體", Font.PLAIN, 12));
+		btnC.setBounds(112, 181, 41, 36);
+		contentPane.add(btnC);
+		
+		JButton button_11 = new JButton("+");
+		button_11.setForeground(new Color(0, 0, 205));
+		button_11.setFont(new Font("新細明體", Font.PLAIN, 12));
+		button_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first = Double.parseDouble(textField.getText());
+				textField.setText("");
+				opration = "+" ;
+			}
+		});
+		button_11.setBounds(163, 43, 41, 36);
+		contentPane.add(button_11);
+		
+		JButton button_12 = new JButton("-");
+		button_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first = Double.parseDouble(textField.getText());
+				textField.setText("");
+				opration = "-" ;
+			}
+		});
+		button_12.setForeground(new Color(0, 0, 205));
+		button_12.setFont(new Font("新細明體", Font.PLAIN, 12));
+		button_12.setBounds(163, 89, 41, 36);
+		contentPane.add(button_12);
+		
+		JButton button_13 = new JButton("*");
+		button_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first = Double.parseDouble(textField.getText());
+				textField.setText("");
+				opration = "*" ;
+			}
+		});
+		button_13.setForeground(new Color(0, 0, 205));
+		button_13.setFont(new Font("新細明體", Font.PLAIN, 12));
+		button_13.setBounds(163, 135, 41, 36);
+		contentPane.add(button_13);
+		
+		JButton button_14 = new JButton("÷");
+		button_14.setForeground(new Color(0, 0, 205));
+		button_14.setFont(new Font("新細明體", Font.PLAIN, 12));
+		button_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first = Double.parseDouble(textField.getText());
+				textField.setText("");
+				opration = "/" ;
+			}
+		});
+		button_14.setBounds(163, 181, 41, 36);
+		contentPane.add(button_14);
+		
+			
+		}
+	}
+

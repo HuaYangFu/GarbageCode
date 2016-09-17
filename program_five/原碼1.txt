@@ -1,0 +1,262 @@
+package calculate;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+public class test3 extends JFrame{
+	
+	private JTable table = new JTable();
+	private Object[][] data ;
+	private String[] data2 = {"id","name","pwd","time"};
+	private DefaultTableModel dm;
+	private JTextField textField;
+    private JTextField textField_1;
+    private JTextField textField_2;
+    private JTextField textField_3;
+	
+    private Connection con;
+    private PreparedStatement ps;
+    private ResultSet rs;
+    private String sql = "SELECT * FROM test.testform";  
+    
+    private String username = "jacky"; 
+    private String password = "2023645";
+    
+    public test3(){	 
+//==============================================================================================================介面設計
+		setSize(751, 400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		getContentPane().setLayout(null);
+		
+		dm = new DefaultTableModel();
+		table.setModel(dm);
+		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setBounds(10, 41, 518, 318);
+		getContentPane().add(scrollPane);
+//=============================================================================================================介面設計end
+//==============================================================================================================刷新按鈕
+		JButton btnNewButton = new JButton("\u5237\u65B0");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				 try {
+			 		  Class.forName("com.mysql.jdbc.Driver"); 
+						  con =DriverManager.getConnection("jdbc:mysql://localhost/test",username,password);
+						  System.out.println(con);
+						  ps = con.prepareStatement(sql);
+						  rs = ps.executeQuery(sql);
+						  
+						  rs.last() ;
+						  int lastNumber=rs.getRow() ;
+						  data=new Object[lastNumber][4] ;
+						  int k=0 ;
+						  rs.beforeFirst() ;
+						  
+						  while(rs.next()){
+							 data[k][0] = rs.getString(1);
+							 data[k][1] = rs.getString(2);
+							 data[k][2] = rs.getString(3);
+							 data[k][3] = rs.getString(4);
+							 k++ ;
+						  }
+						  con.close() ;
+						  ps.close();
+						  rs.close();
+					} catch (ClassNotFoundException | SQLException ee) {
+						ee.printStackTrace();
+					}
+				 dm = new DefaultTableModel(data,data2);
+				 table.setModel(dm);
+			}
+		});
+		btnNewButton.setBounds(546, 57, 87, 23);
+		getContentPane().add(btnNewButton);
+//=====================================================================================================================刷新按鈕end	
+		
+//=======================================================================================================================搜尋按鈕		
+		JButton btnNewButton_1 = new JButton("\u641C\u5C0B");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String text = textField.getText();
+				String sql = "SELECT * FROM test.testform where id = '"+text+"' or name='"+text+"' or pwd='"+text+"' ";
+				 try {
+			 		  Class.forName("com.mysql.jdbc.Driver"); 
+						  con =DriverManager.getConnection("jdbc:mysql://localhost/test",username,password);
+						  ps = con.prepareStatement(sql);
+						  rs = ps.executeQuery(sql);
+						  
+						  rs.last() ;
+						  int lastNumber=rs.getRow() ;
+						  data=new Object[lastNumber][4] ;
+						  int k=0 ;
+						  rs.beforeFirst() ;
+						  
+						  while(rs.next()){
+							 data[k][0] = rs.getString(1);
+							 data[k][1] = rs.getString(2);
+							 data[k][2] = rs.getString(3);
+							 data[k][3] = rs.getString(4);
+							 k++ ;
+						  }
+						  con.close() ;
+						  ps.close();
+						  rs.close();
+					} catch (ClassNotFoundException | SQLException ee) {
+						ee.printStackTrace();
+					}
+				 dm = new DefaultTableModel(data,data2);
+				 table.setModel(dm);
+			}
+		});
+		btnNewButton_1.setBounds(648, 10, 87, 23);
+		getContentPane().add(btnNewButton_1);
+//=====================================================================================================================搜尋按鈕end	
+//=========================================================================================================================修改鈕
+		JButton btnNewButton_2 = new JButton("\u4FEE\u6539");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String textget1 = textField_1.getText();
+				String textget2 = textField_2.getText();
+				String textget3 = textField_3.getText();
+				String sql =  "UPDATE testform SET name ='"+textget2+"',pwd='"+textget3+"' WHERE id ='"+textget1+"' ";
+						    
+				System.out.println(sql);
+				
+				 try {
+						Class.forName("com.mysql.jdbc.Driver"); 
+						System.out.println(1);
+						  con =DriverManager.getConnection("jdbc:mysql://localhost/test",username,password);
+						  System.out.println(2);
+						  ps = con.prepareStatement(sql);
+						  System.out.println(3);
+						  ps.executeUpdate(sql);
+					
+						  con.close() ;
+						  ps.close();
+						  rs.close();
+					} catch (ClassNotFoundException | SQLException e1) {
+						e1.printStackTrace();
+					}
+				 JOptionPane.showMessageDialog(table,"修改成功 請按刷新瀏覽");
+			}
+		});
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnNewButton_2.setBounds(648, 57, 87, 23);
+		getContentPane().add(btnNewButton_2);
+//=========================================================================================================================修改end
+//=========================================================================================================================刪除鈕
+		JButton btnNewButton_3 = new JButton("\u522A\u9664");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String textget1 = textField_1.getText();
+				String textget2 = textField_2.getText();
+				String textget3 = textField_3.getText();
+				String sql =  "DELETE FROM testform where id='"+textget1+"' ";
+				
+				 try {
+						Class.forName("com.mysql.jdbc.Driver"); 
+						  con =DriverManager.getConnection("jdbc:mysql://localhost/test",username,password);
+						  ps = con.prepareStatement(sql);
+						  ps.execute(sql);
+						  
+						  con.close() ;
+						  ps.close();
+						  rs.close();
+					} catch (ClassNotFoundException | SQLException e1) {
+						e1.printStackTrace();
+					}
+				 JOptionPane.showMessageDialog(table,"刪除成功 請按刷新瀏覽");
+			}
+		});
+		btnNewButton_3.setBounds(546, 98, 87, 23);
+		getContentPane().add(btnNewButton_3);
+//=========================================================================================================================刪除鈕end
+//=========================================================================================================================新增鈕
+		JButton btnNewButton_4 = new JButton("\u65B0\u589E");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String textget1 = textField_1.getText();
+				String textget2 = textField_2.getText();
+				String textget3 = textField_3.getText();
+				String sql = "INSERT INTO testform(id,name,pwd) VALUES('"+textget1+"','"+textget2+"','"+textget3+"')";
+				
+				
+				 try {
+					Class.forName("com.mysql.jdbc.Driver"); 
+					  con =DriverManager.getConnection("jdbc:mysql://localhost/test",username,password);
+					  ps = con.prepareStatement(sql);
+					  ps.execute(sql);
+					  
+					  con.close() ;
+					  ps.close();
+					  rs.close();
+				} catch (ClassNotFoundException | SQLException e1) {
+					e1.printStackTrace();
+				}
+				  JOptionPane.showMessageDialog(table,"新增成功 請按刷新瀏覽");
+			}
+		});
+		btnNewButton_4.setBounds(648, 98, 87, 23);
+		getContentPane().add(btnNewButton_4);
+//=========================================================================================================================新增鈕end	
+		JLabel lblNewLabel = new JLabel(data2[0]);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(546, 146, 46, 15);
+		getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel(data2[1]);
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(546, 198, 46, 15);
+		getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel(data2[2]);
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(546, 252, 46, 15);
+		getContentPane().add(lblNewLabel_2);
+		
+		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField.setBounds(10, 11, 623, 21);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(602, 143, 133, 21);
+		getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(602, 195, 133, 21);
+		getContentPane().add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(602, 249, 133, 21);
+		getContentPane().add(textField_3);
+		setVisible(true);
+	}
+}

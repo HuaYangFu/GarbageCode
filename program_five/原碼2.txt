@@ -1,0 +1,72 @@
+package calculate;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+
+public class loging {
+		
+		JFrame frame = new JFrame();
+		private JTextField textField;
+		private JPasswordField passwordField;
+		
+//======================================================================	
+		public loging(){
+		frame.setSize(400,300);
+		frame.setResizable(false);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("\u5E33\u865F");
+		lblNewLabel_1.setBounds(83, 81, 31, 15);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("\u5BC6\u78BC");
+		lblNewLabel_2.setBounds(83, 146, 31, 15);
+		frame.getContentPane().add(lblNewLabel_2);
+		
+		textField = new JTextField();
+		textField.setText("jacky");
+		textField.setBounds(124, 78, 136, 21);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		passwordField = new JPasswordField();
+		passwordField.setText("2023645");
+		passwordField.setBounds(124, 143, 136, 21);
+		frame.getContentPane().add(passwordField);
+		
+		JButton btnEnter = new JButton("enter");
+		btnEnter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String user = textField.getText();
+				String pass = passwordField.getText();
+				if(user.contains("jacky") && pass.contains("2023645"))
+				{
+					test3 test3 = new test3();
+					textField.setText("");
+					passwordField.setText("");
+					frame.dispose();
+				}
+				else
+				{
+				JOptionPane.showMessageDialog(frame,"輸入錯誤 請重新輸入");
+				textField.setText("");
+				passwordField.setText("");
+				}
+			}
+		});
+		btnEnter.setBounds(124, 195, 87, 23);
+		frame.getContentPane().add(btnEnter);
+		frame.setVisible(true);
+	}
+	public static void main(String[] args) {
+		loging loging = new loging();
+	}
+}

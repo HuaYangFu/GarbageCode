@@ -17,7 +17,7 @@
         #top{}
         #top_1{background:#000088;text-align: center;padding-top: 1%;padding-bottom: 1%;color: white;}
 
-        #link{height: 20%;}
+        #link{}
         #link_1,#link_2,#link_3,#link_4,#link_5
         {padding-top: 1%;padding-bottom: 1%;text-align: center;font-size: 20px;}
         #link_1{width: 20%;float: left;background: #D28EFF;}
@@ -32,11 +32,11 @@
         <div id="top_1"><h1>公佈欄</h1></div>
     </div>
     <div id="link">
-        <a href="#"><div id="link_1">回首頁</div></a>
-        <a href="#"><div id="link_2">發佈公告</div></a>
+        <a href="Welcome"><div id="link_1">回首頁</div></a>
+        <a href="creat"><div id="link_2">發佈公告</div></a>
         <a href="#"><div id="link_3">搜尋</div></a>
-        <a href="#"><div id="link_4">登入</div></a>
-        <a href="#"><div id="link_5">註冊</div></a>
+        <a href="loging"><div id="link_4">登入</div></a>
+        <a href="registered"><div id="link_5">註冊</div></a>
     </div>
 </body>
 </html>

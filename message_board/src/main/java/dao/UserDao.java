@@ -4,17 +4,21 @@ package dao;
  * Created by 傅華暘 on 2016/9/26.
  */
 
+import model.user;
+import util.HibernateUtil;
+
 import java.util.List;
 
-import util.HibernateUtil;
-import model.User;
-
-public class UserDao {
+public class userDao {
 
     HibernateUtil hibernateUtil = new HibernateUtil();
 
-    public List<User> getAllUsers() {
-       return hibernateUtil.getAllUsers(User.class);
+    public <T> void creat(final T entity) {
+        hibernateUtil.create(entity);
+    }
+
+    public boolean getbyacount(String acount, String password) {
+        return hibernateUtil.getbyaccount(acount,password,user.class);
     }
 
 }

@@ -1,5 +1,7 @@
 package model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -15,13 +17,15 @@ public class message {
     private int num;
     @Column
     private String title;
-    @Column
+    @Column(length = 21845)
     private String message;
     @Column
     private String author;
     @Column
+    @Type(type="date")
     private Date Start_date;
     @Column
+    @Type(type="date")
     private Date End_date;
 
 
@@ -37,13 +41,7 @@ public class message {
         this.title = title;
     }
 
-    public String getMessage() {
-        return message;
-    }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
 
     public String getAuthor() {
         return author;
@@ -68,4 +66,13 @@ public class message {
     public void setEnd_date(Date end_date) {
         End_date = end_date;
     }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
 }

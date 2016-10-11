@@ -6,11 +6,42 @@
 
 <struts>
     <package name="user" extends="struts-default">
-        <action name="Welcome" class="action.helloAction" method="execute">
+        <action name="Welcome" class="action.messageAction" method="welcome">
             <result name="SUCCESS">welcome.jsp</result>
         </action>
-        <action name="delete" class="action.helloAction" method="execute">
-            <result name="SUCCESS">welcome.jsp</result>
+        <action name="showMessage" class="action.messageAction" method="showMessage">
+            <result name="SUCCESS">showMessage.jsp</result>
+        </action>
+        <action name="creat" class="action.messageAction" method="creat">
+            <result name="SUCCESS">creat.jsp</result>
+        </action>
+        <action name="add" class="action.messageAction" method="add">
+            <result name="SUCCESS">index.jsp</result>
+        </action>
+        <action name="delete" class="action.messageAction" method="delete">
+            <result name="SUCCESS">index.jsp</result>
+        </action>
+        <action name="updata_show" class="action.messageAction" method="updata_show">
+            <result name="SUCCESS">updata.jsp</result>
+        </action>
+        <action name="updata" class="action.messageAction" method="updata">
+            <result name="SUCCESS">index.jsp</result>
+        </action>
+        <!-- user action-->
+        <!-- user action-->
+        <!-- user action-->
+        <action name="loging" class="action.userAction" method="loging">
+            <result name="SUCCESS">loging.jsp</result>
+        </action>
+        <action name="registered" class="action.userAction" method="registered">
+            <result name="SUCCESS">registered.jsp</result>
+        </action>
+        <action name="user_creat" class="action.userAction" method="creat">
+            <result name="SUCCESS">success.jsp</result>
+        </action>
+        <action name="user_loging" class="action.userAction" method="verification">
+            <result name="SUCCESS">success.jsp</result>
+            <result name="error">loging.jsp</result>
         </action>
     </package>
 </struts>

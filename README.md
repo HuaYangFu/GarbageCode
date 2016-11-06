@@ -1,2 +1,1 @@
 #message_board
-* test

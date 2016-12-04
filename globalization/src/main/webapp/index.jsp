@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: 傅華暘
@@ -21,9 +22,10 @@
 </head>
 <body>
 <div class="test">
-  <a href="">English</a>
+  <a href="welcome.action?request_locale=en_US">English</a>
   &nbsp;
-  <a href="">中文</a>
+  <a href="welcome.action?request_locale=zh_CN">中文</a>
+  <p><s:text name="welcome"/></p>
 </div>
 </body>
 </html>

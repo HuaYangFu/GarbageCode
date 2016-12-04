@@ -10,6 +10,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="globalization_main" />
+    <orderEntry type="library" name="Gradle: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.struts:struts2-core:2.3.16.3" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:4.3.9.Final" level="project" />
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.6" level="project" />

@@ -5,11 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <constant name="struts.custom.i18n.resources" value="welcome"/>
-
     <package name="welcome" extends="struts-default" namespace="/">
-        <action name="welcome" class="action.welcome">
-            <result name="success">index.jsp</result>
-        </action>
+        <action name="ajaxSubmit" class="action.ajax" method="loadData"></action>
     </package>
 </struts>

@@ -9,23 +9,32 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>$Title$</title>
-  <style type="text/css">
-    a{
-      font-size: 36px;
+  <script src="lib/jquery.js"></script>
+  <script type="text/javascript">
+    function doAjaxPost() {
+      // get the form values
+      var name = $('#name').val();
+
+      $.ajax({
+        type: "POST",
+        url: "ajaxSubmit.action",
+        data: "name=" + name,
+        success: function(response){
+          // we have the response
+          $('#info').html(response);
+        },
+        error: function(e){
+          alert('Error: ' + e);
+        }
+      });
     }
-    .test{
-      text-align: center;
-      margin-top: 20%;
-    }
-  </style>
+  </script>
 </head>
 <body>
-<div class="test">
-  <a href="welcome.action?request_locale=en_US">English</a>
-  &nbsp;
-  <a href="welcome.action?request_locale=zh_CN">中文</a>
-  <p><s:text name="welcome"/></p>
-</div>
+<body>
+Enter your name please : <input type="text" id="name"><br/>
+<input type="button" value="Say Hello" onclick="doAjaxPost()"><br/>
+<div id="info" style="color: green;"></div>
+</body>
 </body>
 </html>
